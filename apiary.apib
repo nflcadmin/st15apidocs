@@ -45,3 +45,44 @@ A single Note object with all its details
 
 ### Remove a Note [DELETE]
 + Response 204
+
+
+
+## Proposals Collection [/proposals]
+### List all Proposals [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "proposal one"
+        }, {
+          "id": 2, "title": "proposal two"
+        }]
+
+### Create a new Proposal [POST]
++ Request (application/json)
+
+        { "title": "My Test Proposal" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "My Test Proposal" }
+
+## Proposal [/proposals/{id}]
+A single Proposal object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Proposal to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "My Example Proposal title." }
+
+### Remove a Proposal [DELETE]
++ Response 204
