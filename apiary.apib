@@ -89,4 +89,48 @@ A single proposal Budget object with all its details
 + Response 204
 
 
+# Group Programs
+All services related to the programs submission process.
+
+## Programs Collection [/programs]
+### List all Programs [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "program one"
+        }, {
+          "id": 2, "title": "program two"
+        }]
+
+### Create a new Program [POST]
++ Request (application/json)
+
+        { "title": "My Test Program" }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "My Test Program" }
+
+## Programs [/programs/{id}]
+A single Programs object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Proposal to perform action with. Has example value.
+
+### Retrieve a Projgram [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "My Example Program title." }
+
+### Remove a Program [DELETE]
++ Response 204
+
+
+
 
