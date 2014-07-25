@@ -1,52 +1,11 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://st15api-test.nflc.umd.edu
 
 # ST15 API
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+ST15 API is the api for the redesigned Startalk system.
 
-# Group Notes
-Notes related resources of the **Notes API**
-
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
-
-
+# Group Proposals
+All services related to the proposal submission process.
 
 ## Proposals Collection [/proposals]
 ### List all Proposals [GET]
@@ -86,3 +45,48 @@ A single Proposal object with all its details
 
 ### Remove a Proposal [DELETE]
 + Response 204
+
+
+## Budgets Collection [/budgets]
+### List all Budgets [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, 
+          "title": "Jogging in park"
+        }, {
+          "id": 2, 
+          "title": "Pick-up posters from post-office"
+        }]
+
+### Create a Budget [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## Note [/budgets/{id}]
+A single proposal Budget object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the budget. Has example value.
+
+### Retrieve a Budget [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Budget [DELETE]
++ Response 204
+
+
+
